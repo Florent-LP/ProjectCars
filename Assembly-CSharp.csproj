@@ -50,7 +50,9 @@
      <Compile Include="Assets\Resources\CDismiss.cs" />
      <Compile Include="Assets\Resources\CLifeDuration.cs" />
      <Compile Include="Assets\Resources\CRotation.cs" />
-     <Compile Include="Assets\Resources\CarShot.cs" />
+     <Compile Include="Assets\Resources\Car Scripts\BulletDisappear.cs" />
+     <Compile Include="Assets\Resources\Car Scripts\CarJump.cs" />
+     <Compile Include="Assets\Resources\Car Scripts\CarShot.cs" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />

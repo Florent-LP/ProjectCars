@@ -4,7 +4,6 @@ using System.Collections;
 public class CarShot : MonoBehaviour {
 
 	public Rigidbody bullet;
-	public float jumpSpeed = 100f;
 
 	public int ejectSpeed = 100;
 	public double fireRate = 0.5;
@@ -12,11 +11,12 @@ public class CarShot : MonoBehaviour {
 	private double nextFire = 0.0;
 	private bool fullAuto = false;
 
-	public Rigidbody rb;
+	public AudioClip shootSound;
+
+
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent <Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -27,17 +27,9 @@ public class CarShot : MonoBehaviour {
 			Rigidbody projectile;
 			projectile = (Rigidbody)Instantiate (bullet, transform.position, transform.rotation);
 			projectile.velocity = transform.TransformDirection (Vector3.forward * ejectSpeed);
+		
+			GetComponent<AudioSource>().PlayOneShot (shootSound);
 		}
-
-		if (Input.GetKeyDown ("m")){
-//			transform.Translate(Vector3.up * 260 * Time.deltaTime, Space.World);
-			rb.velocity += jumpSpeed * Vector3.up;
-
-//			rb.AddForce(Vector3.up * 100, ForceMode.Impulse);
-//			rb.AddForce(Vector3.up * jumpSpeed);
-
-		} 
-
 
 	}
 }
