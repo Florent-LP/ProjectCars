@@ -9,7 +9,6 @@ public class CarShot : MonoBehaviour {
 	public double fireRate = 0.5;
 
 	private double nextFire = 0.0;
-	private bool fullAuto = false;
 
 	public AudioClip shootSound;
 
