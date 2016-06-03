@@ -53,6 +53,7 @@
      <Compile Include="Assets\Resources\Car Scripts\BulletDisappear.cs" />
      <Compile Include="Assets\Resources\Car Scripts\CarJump.cs" />
      <Compile Include="Assets\Resources\Car Scripts\CarShot.cs" />
+     <Compile Include="Assets\Resources\Car Scripts\respawnManager.cs" />
      <Compile Include="Assets\Resources\Main Scripts\Camera_rotate.cs" />
      <Compile Include="Assets\Resources\Main Scripts\Menu.cs" />
      <Compile Include="Assets\Resources\Main Scripts\soundSplitScreen.cs" />
