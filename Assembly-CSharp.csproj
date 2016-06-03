@@ -53,6 +53,8 @@
      <Compile Include="Assets\Resources\Car Scripts\BulletDisappear.cs" />
      <Compile Include="Assets\Resources\Car Scripts\CarJump.cs" />
      <Compile Include="Assets\Resources\Car Scripts\CarShot.cs" />
+     <Compile Include="Assets\Resources\Main Scripts\Camera_rotate.cs" />
+     <Compile Include="Assets\Resources\Main Scripts\Menu.cs" />
      <Compile Include="Assets\Resources\Main Scripts\soundSplitScreen.cs" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
      <None Include="Assets\race-track-lake\readmore.txt" />

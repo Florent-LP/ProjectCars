@@ -12,6 +12,7 @@ public class CarShot : MonoBehaviour {
 
 	public AudioClip shootSound;
 
+	public KeyCode shotControl; 
 
 
 	// Use this for initialization
@@ -20,7 +21,7 @@ public class CarShot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown("p") && Time.time > nextFire){
+		if (Input.GetKeyDown(shotControl) && Time.time > nextFire){
 			nextFire = Time.time + fireRate;
 
 			Rigidbody projectile;
