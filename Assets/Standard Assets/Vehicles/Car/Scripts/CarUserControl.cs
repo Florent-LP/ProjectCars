@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -12,6 +13,7 @@ namespace UnityStandardAssets.Vehicles.Car
 		public KeyCode right;
 		public KeyCode up;
 		public KeyCode down;
+		private bool stunned = false;
 
 
         private void Awake()
@@ -19,6 +21,20 @@ namespace UnityStandardAssets.Vehicles.Car
             // get the car controller
             m_Car = GetComponent<CarController>();
         }
+
+		public void StunCar()
+		{
+			stunned = true;
+			m_Car.Move(0, 0, 0, 1);
+			StartCoroutine(Coroutine());
+		}
+
+		IEnumerator Coroutine(){
+			yield return new WaitForSeconds (3);
+			stunned = false;
+			m_Car.Move(0, -1, -1, 0);
+			yield break;
+		}
 
 
         private void FixedUpdate()
@@ -43,13 +59,13 @@ namespace UnityStandardAssets.Vehicles.Car
 				v += 1;
 			}
 
-//#if !MOBILE_INPUT
+#if !MOBILE_INPUT
 			float handbrake = CrossPlatformInputManager.GetAxis("Jump");
-			m_Car.Move(h, v, v, handbrake);
+			if (!stunned) m_Car.Move(h, v, v, handbrake);
             
-//#else
-            m_Car.Move(h, v, v, 0f);
-//#endif
+#else
+			if (!stunned) m_Car.Move(h, v, v, 0f);
+#endif
         }
     }
 }
