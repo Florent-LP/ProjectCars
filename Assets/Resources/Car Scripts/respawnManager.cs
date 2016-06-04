@@ -18,8 +18,8 @@ public class respawnManager : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter(Collision col) {
-		if (col.gameObject.name == "Terrain") {
+	void OnTriggerEnter(Collider c) {
+		if (c.gameObject.tag == "Respawn") {
 			gameObject.transform.position = initialPos;
 			gameObject.transform.rotation = initialRot;
 			rb.velocity = Vector3.zero;
