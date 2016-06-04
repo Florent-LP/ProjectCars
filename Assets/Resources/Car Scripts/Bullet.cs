@@ -4,6 +4,8 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class Bullet : MonoBehaviour {
 
+	public GameObject emitter;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine(Coroutine());
@@ -16,7 +18,7 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision c) {
-		if (c.gameObject.tag == "Player") {
+		if (c.gameObject.tag == "Player" && c.gameObject != emitter) {
 			CarUserControl carCtrl = c.gameObject.GetComponent<CarUserControl>();
 			if (carCtrl != null) carCtrl.StunCar();
 		}

@@ -4,6 +4,7 @@ using System.Collections;
 public class CarShot : MonoBehaviour {
 
 	public Rigidbody bullet;
+	public GameObject emitter;
 
 	public int ejectSpeed = 100;
 	public double fireRate = 0.5;
@@ -25,6 +26,9 @@ public class CarShot : MonoBehaviour {
 			nextFire = Time.time + fireRate;
 
 			Rigidbody projectile;
+			Bullet bulletComp = bullet.GetComponent<Bullet> ();
+			if (bulletComp != null)
+				bulletComp.emitter = emitter;
 			projectile = (Rigidbody)Instantiate (bullet, transform.position, transform.rotation);
 			projectile.velocity = transform.TransformDirection (Vector3.forward * ejectSpeed);
 		
