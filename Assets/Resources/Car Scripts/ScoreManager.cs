@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		printLap = lapsUI.GetComponent<Text> ();
-		if (printLap != null) printLap.text = "Tour : " + currentLap + "/" + maxLaps;
+		if (printLap != null) printLap.text = "Lap : " + currentLap + "/" + maxLaps;
 		printWinner = winnerUI.GetComponent<Text> ();
 	}
 	
